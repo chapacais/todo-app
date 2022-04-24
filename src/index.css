@@ -1,13 +1,40 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.App {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/523c70f3-89dc-466c-b591-b6360218bbfe/d9otxzv-7ce342f6-8de1-4601-86d8-f6675df16d78.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyM2M3MGYzLTg5ZGMtNDY2Yy1iNTkxLWI2MzYwMjE4YmJmZVwvZDlvdHh6di03Y2UzNDJmNi04ZGUxLTQ2MDEtODZkOC1mNjY3NWRmMTZkNzgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ANuIC1dXeI0utuacsB_5a4mNpa7LChlGnnVOprsXuts');
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.clear-btn {
+  width: 30%;
+  align-self: flex-end;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: brown;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  cursor: pointer;
 }

@@ -1,0 +1,12 @@
+input {
+  padding: 18px 35px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-right: none;
+  font-family: 'Work Sans', sans-serif;
+}
+
+input[type="submit"] {
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background-color: lightsteelblue;
+}

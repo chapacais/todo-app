@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import Todos from "./components/Todos/Todos";
+import AddTodo from './components/AddTodo/AddTodo';
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const existingTodos = localStorage.getItem('todos');
+    setTodos(existingTodos ? JSON.parse(existingTodos) : []);
+  }, [])
+
+  const addTodo = (todo) => {
+    const addedTodos = [...todos, todo];
+    setTodos(addedTodos);
+    localStorage.setItem('todos', JSON.stringify(addedTodos));
+  };
+
+  const clearTodos = () => {
+    const clearedTodos = [];
+    setTodos(clearedTodos)
+    localStorage.setItem('todos', JSON.stringify(clearedTodos));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <AddTodo addTodo={addTodo} />
+        <Todos todos={todos}/>
+        <button className='clear-btn' onClick={clearTodos}>Clear Todos</button>
+      </div>
     </div>
   );
 }
