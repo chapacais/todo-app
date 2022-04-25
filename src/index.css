@@ -32,9 +32,10 @@ body {
   width: 30%;
   align-self: flex-end;
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: none;
   background-color: brown;
   color: #fff;
   font-family: 'Work Sans', sans-serif;
   cursor: pointer;
+  box-shadow: 5px 10px 15px #707070;
 }

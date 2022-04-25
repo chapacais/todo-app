@@ -1,0 +1,11 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.fa-trash-can {
+  color: rgb(92, 1, 1);
+  cursor: pointer;
+}
