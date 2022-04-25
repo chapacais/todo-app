@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     const existingTodos = localStorage.getItem('todos');
-    setTodos(existingTodos ? JSON.parse(existingTodos) : []);
+    setTodos(JSON.parse(existingTodos) || []);
   }, [])
 
   const addTodo = (todo) => {
@@ -23,9 +23,13 @@ function App() {
   };
 
   const deleteTodo = (todo) => {
-    const currentTodos = todos.filter(thisTodo => thisTodo != todo);
-    setTodos(currentTodos);
-    localStorage.setItem('todos', JSON.stringify(currentTodos));
+    if(window.confirm('Are you sure?')) {
+      const currentTodos = todos.filter(thisTodo => thisTodo != todo);
+      setTodos(currentTodos);
+      localStorage.setItem('todos', JSON.stringify(currentTodos));    
+    } else {
+      return
+    }
   }
 
   return (
